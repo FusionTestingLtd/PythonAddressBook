@@ -1,2 +1,0 @@
-(FirstName  MiddleName  Lastname  House Name/No  Street  Town  Postcode  Phone)
-Cpt,Reggie,Blank,2345,Seasick Drive,Yale,PO47HB,01234567890,
