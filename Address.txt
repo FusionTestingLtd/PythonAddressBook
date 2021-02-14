@@ -1,2 +1,0 @@
-(FirstName  MiddleName  Lastname  House Name/No  Street  Town  Postcode  Phone)
-Damian,-,Hook,432,Poodle St,DaMoon,FG43GT,01234567890,
