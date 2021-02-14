@@ -8,13 +8,14 @@
 
 # Add address to file
 # Show the address that was added
-
+# add ability to create a new addressbook or select existing one.
 def menu():
     while True:
         try:
             print("\n1. Show Address Book")
             # print("2. (Search for Entry)")
             print("2. Add an Address")
+            # print("n. Delete Record") # need to combine with search, add unique ID ?
             print("3. Exit")
             choice = int(input("What would you like to do? "))
             if choice < 1 or choice > 3:
