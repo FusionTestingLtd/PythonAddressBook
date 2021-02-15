@@ -28,7 +28,5 @@ while True:
                 continue
             else:
                 break
-        # delete_record(int(input("Record to delete:")))
-
     elif menu_choice == 5:
         exit()
