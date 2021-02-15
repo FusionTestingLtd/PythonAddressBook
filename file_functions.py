@@ -1,4 +1,5 @@
-from functions import file_length, address_input, format_input_from_file
+from formatting_functions import format_input_from_file
+from functions import address_input
 
 
 # -------------------------
@@ -35,3 +36,17 @@ def read_from_file():
         except IOError:
             print("\nThere is no Address book! -- Please add an address.\n")
             break
+
+
+# -------------------------
+#   DETERMINE FILE LENGTH
+# -------------------------
+def file_length():
+    with open("Address.txt", "r") as data:
+        line = data.readline()
+        count = 0
+        while line:
+            line = data.readline()
+            count = count + 1
+        data.close()
+    return count

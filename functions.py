@@ -1,3 +1,7 @@
+
+from formatting_functions import format_to_csv
+
+
 # -------------------------
 #   MENU
 # -------------------------
@@ -28,7 +32,6 @@ def address_input():
     while True:
         try:
             name = input("Full name: ").split()
-
             if len(name) == 2 and name[0].isalpha() and name[1].isalpha():
                 first_name = name[0]
                 middle_name = "-"
@@ -94,39 +97,12 @@ def address_input():
         except ValueError:
             print("Err-10 shouldn't be able to get here!\n")
             continue
-    # format CSV string to return
-    address = [first_name, middle_name, last_name, house_number, street, town, postcode, phone_number]
-    i = 0
-    data = ""
-    while i < len(address):
-        data = data + "{}{}".format(address[i], ",")
-        i = i + 1
 
+    data = format_to_csv(first_name, middle_name, last_name, house_number, street, town, postcode, phone_number)
     # Display confirmation statement to the user..
     print("{} {} {} {}".format("Address entry for [", first_name, last_name, "] has been successful!"))
     return data
 
-
-# -------------------------
-#   FORMAT DATA FROM FILE
-# -------------------------
-def format_input_from_file(file_input):
-    x = file_input.replace(",", "    ")
-    return x
-
-
-# -------------------------
-#   DETERMINE FILE LENGTH
-# -------------------------
-def file_length():
-    with open("Address.txt", "r") as data:
-        line = data.readline()
-        count = 0
-        while line:
-            line = data.readline()
-            count = count + 1
-        data.close()
-    return count
 
 # -------------------------
 #   X
