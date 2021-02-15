@@ -28,9 +28,14 @@ def read_from_file():
             address_line = format_input_from_file(file.readline())  # read the first line
             i = 1  # set a counter
             while address_line:  # while there is a line to read
-                print(address_line.strip('\n'))  # print it - without the extra LF.
-                address_line = format_input_from_file(file.readline())  # read the next line
-                i = i + 1  # increment the counter
+                if i == 1:
+                    print(address_line.strip('\n'))  # print it - without the extra LF.
+                    address_line = format_input_from_file(file.readline())
+                    i = i + 1
+                else:
+                    print("{} {}".format([i - 1], address_line.strip('\n')))  # print it - without the extra LF.
+                    address_line = format_input_from_file(file.readline())  # read the next line
+                    i = i + 1  # increment the counter
             file.close()  # close the file.
             break
         except IOError:
@@ -50,3 +55,28 @@ def file_length():
             count = count + 1
         data.close()
     return count
+
+
+# -------------------------
+#   SEARCH FILE FOR X
+# -------------------------
+def search_file(search_term):
+    print("{} {}".format("Searched for:", search_term))
+    with open("Address.txt", "r") as data:
+        line = data.readline()  # line is str
+        i = 0
+        while line:
+            # search line for search term.
+            if search_term not in line:
+                # print("{}{}".format([i], "NO"))
+                pass
+            else:
+                print("{} {}".format([i], format_input_from_file(line)))
+            line = data.readline()
+            i = i + 1
+        data.close()
+
+
+# -------------------------
+#   DELETE ENTRY FROM FILE
+# -------------------------

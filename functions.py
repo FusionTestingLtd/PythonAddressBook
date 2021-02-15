@@ -9,12 +9,12 @@ def menu():
     while True:
         try:
             print("\n1. Show Address Book")
-            # print("2. (Search for Entry)")
             print("2. Add an Address")
+            print("3. Search for Entry")
             # print("n. Delete Record") # need to combine with search, add unique ID ?
-            print("3. Exit")
+            print("4. Exit")
             choice = int(input("What would you like to do? "))
-            if choice < 1 or choice > 3:
+            if choice < 1 or choice > 4:
                 print("Invalid selection\n")
                 continue
             else:
@@ -102,8 +102,3 @@ def address_input():
     # Display confirmation statement to the user..
     print("{} {} {} {}".format("Address entry for [", first_name, last_name, "] has been successful!"))
     return data
-
-
-# -------------------------
-#   X
-# -------------------------

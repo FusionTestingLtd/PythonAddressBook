@@ -1,15 +1,7 @@
-# Menu:
-#   Show entire address book
-#   Add an address
-#   (search for entry)
 
-#  get the address to add from the user:
-
-
-# Add address to file
-# Show the address that was added
 # add ability to create a new addressbook or select existing one.
-from file_functions import write_to_file, read_from_file
+
+from file_functions import write_to_file, read_from_file, search_file
 from functions import menu
 
 # -----------------------------------------------
@@ -22,4 +14,6 @@ while True:
     elif menu_choice == 1:
         read_from_file()
     elif menu_choice == 3:
+        search_file(input("Search for: "))
+    elif menu_choice == 4:
         exit()
